@@ -27,7 +27,7 @@ void Game::run() {
         if(dt_update >= time_per_update) {
             m_funcs.update();
 
-            dt_update = 0;
+            dt_update -= time_per_update;
         }
         //===================UPDATE====================
 
@@ -37,7 +37,7 @@ void Game::run() {
             m_window.display();
             m_window.clear();
 
-            dt_frame = 0;
+            dt_frame -= time_per_frame;
         }
         //===================DRAW====================
 
